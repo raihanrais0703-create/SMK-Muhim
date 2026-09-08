@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SMK Muhammadiyah Imogiri</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+<img src="logo.png" alt="Logo SMK">
+
+<h2>
+SMK Muhammadiyah Imogiri
+</h2>
+
+</div>
+
+<ul class="nav-links" id="navLinks">
+<li><a href="#beranda" onclick="closeMenu()">Beranda</a></li>
+<li><a href="#profil" onclick="closeMenu()">Profil</a></li>
+<li><a href="#jurusan" onclick="closeMenu()">Jurusan</a></li>
+<li><a href="#prestasi" onclick="closeMenu()">Prestasi</a></li>
+<li><a href="#kontak" onclick="closeMenu()">Kontak</a></li>
+<li><a href="#" onclick="openChatFromMenu()">💬 Chat Asisten</a></li>
+</ul>
+
+<div class="hamburger" id="hamburger" onclick="toggleMenu()">
+<span></span>
+<span></span>
+<span></span>
+</div>
+
+</nav>
+
+</header>
+
+
+
+
+
+<section class="hero" id="beranda">
+
+<div class="hero-text">
+
+<h1>
+Selamat Datang<br>
+SMK Muhammadiyah Imogiri
+</h1>
+
+
+<p>
+Sekolah Menengah Kejuruan yang
+mencetak generasi unggul di bidang
+teknologi dan industri.
+</p>
+
+
+<button onclick="document.getElementById('profil').scrollIntoView({behavior:'smooth'})">
+Jelajahi Sekolah
+</button>
+
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<section class="sambutan hidden">
+
+    <div class="sambutan-img">
+
+        <img src="kepala-sekolah.jpg" alt="Kepala Sekolah">
+
+    </div>
+
+
+    <div class="sambutan-text">
+
+        <h2>
+            Sambutan Kepala Sekolah
+        </h2>
+
+        <p>
+            Assalamu'alaikum warahmatullahi wabarakatuh.
+
+            Selamat datang di website resmi
+            SMK Muhammadiyah Imogiri.
+
+            Kami berkomitmen memberikan pendidikan
+            terbaik untuk membentuk siswa yang
+            berkarakter dan kompeten.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+<section class="profil" id="profil">
+
+<h2>
+Profil Sekolah
+</h2>
+
+
+<p>
+SMK Muhammadiyah Imogiri merupakan
+sekolah kejuruan yang menyediakan
+pendidikan berbasis teknologi,
+keterampilan, dan dunia industri.
+</p>
+
+</section>
+
+
+
+
+
+
+
+<section class="jurusan hidden" id="jurusan">
+
+<h2>
+Jurusan Kami
+</h2>
+
+
+<div class="card-jurusan">
+
+<div class="card" onclick="bukaDetail('tkj')">
+<h3>Teknik Komputer dan Jaringan (TKJ)</h3>
+<p>Mempelajari jaringan komputer, server, keamanan jaringan, pemrograman, dan teknologi informasi.</p>
+</div>
+
+<div class="card" onclick="bukaDetail('tbsm')">
+<h3>Teknik Bisnis Sepeda Motor (TBSM)</h3>
+<p>Mempelajari perawatan, perbaikan, dan teknologi kendaraan sepeda motor.</p>
+</div>
+
+<div class="card" onclick="bukaDetail('tkr')">
+<h3>Teknik Kendaraan Ringan (TKR)</h3>
+<p>Mempelajari sistem kendaraan mobil, mesin, kelistrikan, dan perawatan otomotif.</p>
+</div>
+
+<div class="card" onclick="bukaDetail('tb')">
+<h3>Tata Busana (TB)</h3>
+<p>Mempelajari desain pakaian, pembuatan busana, dan keterampilan industri fashion.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<section class="video">
+
+<video autoplay muted loop playsinline preload="metadata">
+
+    <source src="profil.mp4" type="video/mp4">
+
+</video>
+
+</section>
+
+
+
+
+
+
+
+<section class="prestasi hidden" id="prestasi">
+
+<h2>
+Prestasi
+</h2>
+
+<div class="card-prestasi">
+
+<div class="card">
+<h3>🏆 Juara 1 LKS Tingkat Kabupaten</h3>
+<p>Lomba Kompetensi Siswa bidang Teknik Komputer dan Jaringan, tahun 2025.</p>
+</div>
+
+<div class="card">
+<h3>🏆 Juara 2 Lomba Otomotif</h3>
+<p>Kompetisi keterampilan Teknik Kendaraan Ringan tingkat provinsi.</p>
+</div>
+
+<div class="card">
+<h3>🏆 Juara Favorit Fashion Show</h3>
+<p>Karya siswa jurusan Tata Busana tampil di pameran karya siswa DIY.</p>
+</div>
+
+</div>
+
+</section>
+
+
+
+<section class="kontak" id="kontak">
+
+<h2>
+Kontak
+</h2>
+
+<div class="kontak-box">
+
+<!-- ISI SENDIRI: nomor WA, email, medsos, dll di sini -->
+
+</div>
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 SMK Muhammadiyah Imogiri
+</p>
+
+</footer>
+
+
+<div class="modal-overlay" id="modalOverlay" onclick="tutupDetail(event)">
+  <div class="modal-box">
+    <span class="modal-close" onclick="tutupDetail(event)">&times;</span>
+    <img id="modalImg" src="" alt="">
+    <h2 id="modalTitle"></h2>
+    <p id="modalDesc"></p>
+  </div>
+</div>
+
+<!-- CHATBOT WIDGET -->
+<div class="chat-bubble" id="chatBubble" onclick="toggleChat()">💬</div>
+
+<div class="chat-box" id="chatBox">
+  <div class="chat-header">
+    Asisten Sekolah
+    <span class="chat-close" onclick="toggleChat()">&times;</span>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">Halo! Tanya seputar jurusan, keuntungan masuk sini, kepala sekolah, perpustakaan, atau lokasi gedung ya 😊</div>
+  </div>
+  <form class="chat-form" id="chatForm">
+    <input type="text" id="chatInput" placeholder="Tulis pertanyaan..." autocomplete="off">
+    <button type="submit">Kirim</button>
+  </form>
+</div>
+
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
